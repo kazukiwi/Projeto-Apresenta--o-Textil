@@ -184,6 +184,11 @@ def garantir_armarios_iniciais(db: Session):
 
 # 4º: PÁGINA INICIAL / DASHBOARD
 @app.get("/")
+def moda(request: Request):
+    return templates.TemplateResponse(name="moda.html", request=request)
+
+
+@app.get("/dashboard")
 def home(
     request: Request,
     usuario=Depends(get_usuario_opcional),

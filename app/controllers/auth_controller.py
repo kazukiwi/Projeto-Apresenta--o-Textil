@@ -230,14 +230,14 @@ def redefinir_senha(
 
     usuario.senha_hash = hash_senha(senha)
     db.commit()
-    return RedirectResponse(url="/?senha_redefinida=1", status_code=303)
+    return RedirectResponse(url="/auth/login?senha_redefinida=1", status_code=303)
 
 #Rota de cadastro
 @router.get("/login")
 def tela_login(request: Request):
     return templates.TemplateResponse(
         request,
-        "auth/login.html",
+        "index.html",
         {"request": request}
     )
 
@@ -275,7 +275,7 @@ def login_usuario(
     token = criar_token(token_data)
 
     #Redirecionar para a tela inicial com o token no cookie
-    response = RedirectResponse(url="/?login=ok", status_code=303)
+    response = RedirectResponse(url="/dashboard?login=ok", status_code=303)
     response.set_cookie(
         key="access_token", 
         value=token, 

@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="/static/css/feedback.css?v=1">
 <header>
     <nav class="navbar">
-        <div class="logo"><a href="/"><img src="/static/img/logo.png" alt="Logo AAPM"></a></div>
+        <div class="logo"><a href="/dashboard"><img src="/static/img/logo.png" alt="Logo AAPM"></a></div>
         <ul class="menu">
-            <li><a href="/" class="{{ 'active' if caminho == '/' else '' }}">Dashboard</a></li>
+            <li><a href="/dashboard" class="{{ 'active' if caminho == '/dashboard' else '' }}">Dashboard</a></li>
             <li><a href="/produtos" class="{{ 'active' if caminho.startswith('/produtos') else '' }}">Produtos</a></li>
             {% if usuario.role == 'admin' %}
             <li><a href="/clientes" class="{{ 'active' if caminho.startswith('/clientes') else '' }}">Clientes</a></li>

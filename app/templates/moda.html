@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore estilos, cores, tecidos e as marcas que fazem parte do universo da moda.">
+    <title>AAPM | Universo da moda</title>
+    <link rel="icon" href="/static/img/image.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/moda.css?v=3">
+    <script src="/static/javascript/moda.js?v=2" defer></script>
+    <script src="/static/javascript/moda_produtos.js?v=1" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#explorar">Pular para o conteúdo</a>
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="Universo da moda, início">Universo da Moda</a>
+        <nav aria-label="Navegação principal"><a class="current" href="#inicio">Início</a><a href="#produtos-moda">Produtos</a><a href="#explorar">Explorar</a><a href="#paleta">Cores</a><a href="#sobre">Sobre</a></nav>
+        <a class="header-cta" href="#explorar">Encontre sua inspiração <span aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+    </header>
+    <main>
+        <section class="hero wrap" id="inicio">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="dot"></span> UM OLHAR PARA A MODA</p>
+                <h1>Moda é mais<br>que vestir.<br>É <em>expressar.</em></h1>
+                <p class="intro">Das texturas às referências. Descubra estilos, explore cores e conheça as ideias por trás de cada criação.</p>
+                <a class="button" href="#explorar">Explore esse universo <span aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+                <div class="hero-note"><span class="asterisk" aria-hidden="true"><i class="fa-solid fa-scissors" aria-hidden="true"></i></span><p>Novas referências.<br><strong>Infinitas possibilidades.</strong></p></div>
+            </div>
+            <div class="hero-art">
+                <div class="orbit" aria-hidden="true"></div>
+                <div class="editorial-photo"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Moda nas ruas: peças, texturas e combinações em uma vitrine" fetchpriority="high"><span class="photo-caption">O ESTILO COMEÇA NO SEU OLHAR</span></div>
+                <div class="floating-label"><span aria-hidden="true"><i class="fa-solid fa-shirt" aria-hidden="true"></i></span> Vista suas ideias.</div>
+                <div class="color-label"><div><i></i><i></i><i></i><i></i></div><span>Uma paleta. Muitas histórias.</span></div>
+                <span class="art-index" aria-hidden="true">01 / INSPIRAÇÃO</span>
+            </div>
+        </section>
+        <div class="ribbon" aria-hidden="true"><div>ESTILO <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> COR <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> TEXTURA <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> IDENTIDADE <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> MODA <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> ESTILO <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> COR <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> TEXTURA <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> IDENTIDADE <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span> MODA <span><i class="fa-solid fa-scissors" aria-hidden="true"></i></span></div></div>
+        <section class="products-section wrap" id="produtos-moda" aria-labelledby="products-title">
+            <div class="section-heading"><div><p class="eyebrow">PRODUTOS DE MODA</p><h2 id="products-title">Peças para se inspirar</h2></div><p>Roupas, calçados e acessórios para explorar.<br>Uma vitrine demonstrativa, sem compras ou cadastro.</p></div>
+            <div class="filters" role="group" aria-label="Filtrar produtos de moda">
+                <button type="button" data-product-filter="todos" aria-pressed="true">Todos</button>
+                <button type="button" data-product-filter="roupas" aria-pressed="false">Roupas</button>
+                <button type="button" data-product-filter="calcados" aria-pressed="false">Calçados</button>
+                <button type="button" data-product-filter="bolsas" aria-pressed="false">Bolsas</button>
+                <button type="button" data-product-filter="acessorios" aria-pressed="false">Acessórios</button>
+            </div>
+            <div class="results-info"><p id="products-status" role="status">Carregando imagens de produtos…</p><button class="products-retry" id="products-retry" type="button" hidden>Tentar novamente</button></div>
+            <div class="products-grid" id="fashion-products" aria-busy="true"></div>
+            <button class="more-button" id="products-more" type="button" hidden>Ver mais produtos <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+            <p class="products-source">Imagens e nomes: <a href="https://dummyjson.com" target="_blank" rel="noopener noreferrer">DummyJSON</a> · Produtos de demonstração.</p>
+            <noscript><p>Ative o JavaScript para carregar as imagens dos produtos.</p></noscript>
+        </section>
+        <section class="explore wrap" id="explorar" aria-labelledby="explore-title">
+            <div class="section-heading"><div><p class="eyebrow">SEU PONTO DE PARTIDA</p><h2 id="explore-title">Um universo para <em>descobrir.</em></h2></div><p>Um pouco de história, uma dose de criatividade.<br>Escolha um assunto e deixe a curiosidade guiar.</p></div>
+            <div class="explore-tools"><div class="filters" role="group" aria-label="Filtrar por assunto">
+                <button type="button" data-filter="todos" aria-pressed="true">Tudo</button>
+                <button type="button" data-filter="estilos" aria-pressed="false">Estilos</button>
+                <button type="button" data-filter="cores" aria-pressed="false">Cores</button>
+                <button type="button" data-filter="tecidos" aria-pressed="false">Tecidos</button>
+                <button type="button" data-filter="marcas" aria-pressed="false">Marcas</button>
+                <button type="button" data-filter="empresas" aria-pressed="false">Empresas</button>
+            </div><label class="search"><span aria-hidden="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span><input type="search" id="fashion-search" placeholder="Busque uma referência…" aria-label="Buscar na seleção de moda" maxlength="100"></label></div>
+            <div class="results-info"><p id="result-count" role="status"></p><p id="api-status" role="status">Preparando referências…</p><button id="retry" type="button" hidden>Tentar novamente</button></div>
+            <div class="concept-grid" id="concept-grid" aria-label="Referências de moda"></div>
+            <p id="empty-state" class="empty-state" hidden>Nenhuma referência encontrada nesta seleção. Experimente outro termo ou selecione Tudo.</p>
+            <button class="more-button" id="show-more" type="button" hidden>Descobrir mais referências <span aria-hidden="true"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></button>
+            <noscript><p>Ative o JavaScript para explorar os filtros e carregar as referências. Você também pode conhecer os conceitos de <a href="https://pt.wikipedia.org/wiki/Moda">moda na Wikipédia</a>.</p></noscript>
+        </section>
+        <section class="palette-section" id="paleta"><div class="wrap palette-layout">
+            <div><p class="eyebrow">COMBINAÇÕES QUE INSPIRAM</p><h2>Cada cor,<br>uma <em>possibilidade.</em></h2><p>Uma seleção inspirada na nossa identidade.<br>Toque em uma cor para conhecer seu tom.</p><p class="selected-color" id="selected-color" role="status">Lilás suave · #C7C4E8</p></div>
+            <div class="swatches" role="group" aria-label="Paleta de inspiração">
+                <button style="--swatch:#09145c;--ink:white" data-color="Azul profundo · #09145C" aria-pressed="false"><span>01</span><strong>Azul profundo</strong><small>#09145C</small></button>
+                <button style="--swatch:#1c1c64;--ink:white" data-color="Índigo · #1C1C64" aria-pressed="false"><span>02</span><strong>Índigo</strong><small>#1C1C64</small></button>
+                <button style="--swatch:#b4b0df" data-color="Lavanda · #B4B0DF" aria-pressed="false"><span>03</span><strong>Lavanda</strong><small>#B4B0DF</small></button>
+                <button style="--swatch:#c7c4e8" data-color="Lilás suave · #C7C4E8" aria-pressed="true"><span>04</span><strong>Lilás suave</strong><small>#C7C4E8</small></button>
+                <button style="--swatch:#f5f4fa" data-color="Branco suave · #F5F4FA" aria-pressed="false"><span>05</span><strong>Branco suave</strong><small>#F5F4FA</small></button>
+            </div>
+        </div></section>
+        <section class="about wrap" id="sobre"><span class="asterisk" aria-hidden="true"><i class="fa-solid fa-scissors" aria-hidden="true"></i></span><div><p class="eyebrow">MODA, CULTURA E CRIATIVIDADE</p><h2>Referências para criar.<br><em>Liberdade para ser.</em></h2><p>Um espaço demonstrativo da AAPM para aproximar você do universo da moda. Explore no seu ritmo, sem cadastro.</p></div><a class="text-link" href="#inicio">Voltar ao início <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section>
+    </main>
+    <footer class="site-footer wrap"><p>© 2026 AAPM · Universo da moda</p><p>Referências: Wikipédia · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA</a> · Foto: Unsplash</p><a href="/auth/login">Área administrativa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></footer>
+</body>
+</html>

@@ -11,8 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/static/css/moda.css?v=3">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js" defer></script>
     <script src="/static/javascript/moda.js?v=2" defer></script>
     <script src="/static/javascript/moda_produtos.js?v=1" defer></script>
+    <script src="/static/javascript/busca_visual.js?v=1" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#explorar">Pular para o conteúdo</a>
@@ -53,6 +56,17 @@
             <button class="more-button" id="products-more" type="button" hidden>Ver mais produtos <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
             <p class="products-source">Imagens e nomes: <a href="https://dummyjson.com" target="_blank" rel="noopener noreferrer">DummyJSON</a> · Produtos de demonstração.</p>
             <noscript><p>Ative o JavaScript para carregar as imagens dos produtos.</p></noscript>
+        </section>
+        <section class="visual-search wrap" id="busca-visual" aria-labelledby="visual-search-title">
+            <div class="section-heading"><div><p class="eyebrow">BUSCA POR IMAGEM</p><h2 id="visual-search-title">Encontre uma peça pelo seu <em>olhar.</em></h2></div><p>Envie um look e selecione uma área detectada para comparar com o catálogo local.</p></div>
+            <label class="visual-dropzone" id="visual-dropzone" for="visual-image-input"><input id="visual-image-input" type="file" accept="image/jpeg,image/png,image/webp"><span class="visual-upload-icon"><i class="fa-solid fa-image" aria-hidden="true"></i></span><strong>Escolha ou arraste uma foto</strong><small>JPG, PNG ou WEBP · até 8 MB</small></label>
+            <div class="visual-workspace" id="visual-workspace" hidden>
+                <div class="visual-stage">
+                    <div class="visual-preview"><img id="visual-preview-image" alt="Prévia da imagem enviada"><div id="visual-hotspot-layer"></div><svg class="visual-connections" id="visual-connections" aria-hidden="true"></svg></div>
+                    <p class="visual-status" id="visual-status" role="status">Analisando imagem…</p>
+                </div>
+                <div class="visual-results"><p class="visual-hint" id="visual-hint">Passe o mouse sobre um detalhe para explorar o look.</p><div class="visual-detected-list" id="visual-detected-list" aria-label="Peças detectadas"></div><article class="visual-piece-panel" id="visual-piece-panel" hidden><p class="visual-piece-description"><strong>DESCRIÇÃO:</strong> <span id="visual-piece-name">-</span></p><dl><div><dt>Tipo</dt><dd id="visual-piece-type">-</dd></div><div><dt>Materiais</dt><dd id="visual-piece-materials">-</dd></div><div><dt>Preço</dt><dd id="visual-piece-price">-</dd></div><div><dt>Cor</dt><dd id="visual-piece-color">-</dd></div><div><dt>Marca</dt><dd id="visual-piece-brand">Não informada</dd></div></dl></article><div class="products-grid visual-products" id="visual-products"></div></div>
+            </div>
         </section>
         <section class="explore wrap" id="explorar" aria-labelledby="explore-title">
             <div class="section-heading"><div><p class="eyebrow">SEU PONTO DE PARTIDA</p><h2 id="explore-title">Um universo para <em>descobrir.</em></h2></div><p>Um pouco de história, uma dose de criatividade.<br>Escolha um assunto e deixe a curiosidade guiar.</p></div>

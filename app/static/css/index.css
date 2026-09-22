@@ -1,0 +1,454 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Playfair Display", serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width: 100%;
+    height: 90px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+    z-index: 20;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.navbar-logo{
+    width: 180px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.navbar-logo:hover{
+    transform: scale(1.03);
+}
+
+/* =========================
+   FUNDO
+========================= */
+
+.background{
+    width: 100%;
+    min-height: 120vh;
+
+    background:
+        url('/static/img/fundo.png') no-repeat center center / cover,
+        linear-gradient(135deg, #c7c4e8, #b4b0df, #c9c7ea);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================
+   CIRCULO GIRANDO
+========================= */
+
+.rotating-circle{
+    position: absolute;
+    width: 1300px;
+    left: -450px;
+    top: -100px;
+    opacity: 0.25;
+
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(11%)
+        sepia(31%)
+        saturate(6200%)
+        hue-rotate(225deg)
+        brightness(45%)
+        contrast(115%);
+
+    animation: rotateCircle 30s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotateCircle{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================
+   ESQUERDA
+========================= */
+
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 180px;
+    position: relative;
+    z-index: 5;
+}
+
+.logo-text{
+    font-size: 110px;
+    color: #09145c;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.left p{
+    max-width: 520px;
+    text-align: left;
+    font-size: 26px;
+    line-height: 46px;
+    color: #000;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(255,255,255,0.8);
+}
+
+/* =========================
+   DIREITA
+========================= */
+
+.right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   CARD LOGIN
+========================= */
+
+.login-card{
+    width: 430px;
+    background: #1c1c64;
+    padding: 50px;
+    border-radius: 35px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: aparecer 1s ease;
+    position: relative;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card h1{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 35px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-box{
+    width: 100%;
+    height: 60px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.input-box i{
+    color: white;
+    font-size: 22px;
+}
+
+.input-box input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+    color: white;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+.input-box input::placeholder{
+    color: #d6d6d6;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+button{
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    background-color: white;
+    color: #09145c;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: scale(1.03);
+}
+
+.forgot-password-link{
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.forgot-password-link:hover{
+    border-color: white;
+}
+
+.login-feedback{
+    margin: -8px 0 20px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.login-feedback--error{
+    background: #ffe1e4;
+    color: #871b28;
+}
+
+.login-feedback--success{
+    background: #dff6e6;
+    color: #125a2a;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.main-footer{
+    width: 100%;
+    background: #09145c;
+    color: white;
+    padding: 25px 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-content{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.footer-links{
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a{
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: white;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1024px){
+
+    .left{
+        padding-left: 80px;
+    }
+
+    .logo-text{
+        font-size: 80px;
+    }
+
+    .left p{
+        font-size: 22px;
+        line-height: 36px;
+        max-width: 400px;
+    }
+
+    .login-card{
+        width: 380px;
+        padding: 40px;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 40px;
+        min-height: auto;
+    }
+
+    .left,
+    .right{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .logo-text{
+        font-size: 70px;
+        margin-bottom: 15px;
+    }
+
+    .left p{
+        max-width: 90%;
+        font-size: 20px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .login-card{
+        width: 100%;
+        max-width: 400px;
+        padding: 35px;
+    }
+
+    .login-card h1{
+        font-size: 45px;
+    }
+
+    .rotating-circle{
+        width: 900px;
+        left: -350px;
+        top: -150px;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .navbar{
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .navbar-logo{
+        width: 140px;
+    }
+
+    .logo-text{
+        font-size: 55px;
+    }
+
+    .left p{
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .login-card{
+        padding: 25px;
+        border-radius: 25px;
+    }
+
+    .login-card h1{
+        font-size: 36px;
+    }
+
+    .input-box{
+        height: 55px;
+    }
+
+    .input-box input{
+        font-size: 16px;
+    }
+
+    button{
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .footer-links{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rotating-circle{
+        width: 700px;
+        left: -280px;
+        top: -120px;
+    }
+
+}
